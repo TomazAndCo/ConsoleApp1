@@ -1,0 +1,15 @@
+
+stages:
+- build  
+
+build_job:
+stage: build
+only:
+- branches
+script:
+- 'cd ConsoleApp1'
+- '"C:\Tools\Nuget\nuget.exe" restore'
+- '"E:\prog\Новая папка\MSBuild\Current\Bin\msbuild.exe" ConsoleApp1.sln'
+artifacts:
+paths:
+- 'ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe'
